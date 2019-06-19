@@ -12,9 +12,9 @@ function bake(){
 }
 
 function cleanUp(){
- # docker stop dynomite1 > /dev/null 2>&1 ; docker rm dynomite1 > /dev/null 2>&1
-  docker stop dynomite2 > /dev/null 2>&1 ; docker rm dynomite2 > /dev/null 2>&1
-  #docker stop dynomite3 > /dev/null 2>&1 ; docker rm dynomite3 > /dev/null 2>&1
+#  docker stop dynomite1 > /dev/null 2>&1 ; docker rm dynomite1 > /dev/null 2>&1
+ # docker stop dynomite2 > /dev/null 2>&1 ; docker rm dynomite2 > /dev/null 2>&1
+  docker stop dynomite3 > /dev/null 2>&1 ; docker rm dynomite3 > /dev/null 2>&1
 
   docker stop dynomite21 &>/dev/null ; docker rm dynomite21 > /dev/null 2>&1
   docker stop dynomite22 &>/dev/null ; docker rm dynomite22 > /dev/null 2>&1
@@ -43,7 +43,7 @@ function setupClusters(){
 
 function setupSingleClusters(){
   SHARED=/usr/local/docker-shared/dynomite/:/var/lib/redis/
-  docker run -d -v $SHARED --name dynomite2 --net=host -p 8102:8102 -e DYNOMITE_NODE=2 -e DYNOMITE_VERSION=$DV diegopacheco/dynomitedocker
+  docker run -d -v $SHARED  --net=host --name dynomite3 -e DYNOMITE_NODE=3 -e DYNOMITE_VERSION=$DV diegopacheco/dynomitedocker
 }
 
 function setupShardCluster(){
