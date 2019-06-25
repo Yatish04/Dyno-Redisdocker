@@ -5,8 +5,9 @@ dyn_o_mite:
   listen: 0.0.0.0:8102
   dyn_seed_provider: simple_provider
   dyn_seeds:
-  - 192.168.244.132:8101:rack1:dc:100
-  - 192.168.244.130:8101:rack1:dc:100
-  servers:
+  - 192.168.244.131:8101:rack2:dc:100
+  - 192.168.244.132:8101:rack3:dc:100
+servers:
   - 127.0.0.1:6379:1
   tokens: '100'
+  
